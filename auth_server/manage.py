@@ -5,7 +5,17 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'auth_server.settings')
+    # check manage env
+    env = os.environ.get('AUTH_ENV', 'production')
+    print("manage.py env: {}".format(env))
+
+    if env == 'production':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.deploy')
+    elif env == 'development':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.debug')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'auth_server.settings')
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
