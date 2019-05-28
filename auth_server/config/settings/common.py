@@ -32,6 +32,12 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework_swagger',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
     'corsheaders',
 
     'accounts',
@@ -107,6 +113,10 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%Y-%m-%dT%H:%M:%S+09:00',
 }
 
+# make localhost available
+SITE_ID = 1
+
+REST_USE_JWT = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

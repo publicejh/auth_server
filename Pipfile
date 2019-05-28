@@ -12,6 +12,7 @@ django-cors-headers = "*"
 djangorestframework = "*"
 django-rest-swagger = "*"
 djangorestframework-jwt = "*"
+django-rest-auth = {extras = ["with_social"],version = "*"}
 
 [requires]
 python_version = "3.7"
