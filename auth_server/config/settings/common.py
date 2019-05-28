@@ -116,6 +116,9 @@ REST_FRAMEWORK = {
 # make localhost available
 SITE_ID = 1
 
+# this will avoid the need for an SMTP server as e=mails, will be printed to the console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 REST_USE_JWT = True
 
 # Internationalization
