@@ -1,5 +1,6 @@
 import os
 import json
+import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
@@ -111,6 +112,16 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     # 'DATETIME_INPUT_FORMATS': '%Y-%m-%dT%H:%M:%S+09:00',
     'DATETIME_FORMAT': '%Y-%m-%dT%H:%M:%S+09:00',
+
+    'DEFAULT_PERMISSION_CLASSES': (
+        # will deny permission to any unauthenticated user
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
+    ),
 }
 
 # make localhost available
@@ -119,7 +130,14 @@ SITE_ID = 1
 # this will avoid the need for an SMTP server as e=mails, will be printed to the console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+REST_SESSION_LOGIN = False
+
 REST_USE_JWT = True
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
+    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
