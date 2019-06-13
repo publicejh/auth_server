@@ -70,6 +70,15 @@ Django와 JWT 토큰을 사용하여 간단한 인증 서버를 구현
 }
 ```
 
+### 환경분리 env
+> export AUTH_ENV=development
+
+default: production
+
+develop -> config/settings/debug.py 수행
+
+production -> config/settings/deploy.py 수행
+
 ## 기능
 - 회원가입
 - 로그인
