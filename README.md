@@ -75,7 +75,7 @@ Django와 JWT 토큰을 사용하여 간단한 인증 서버를 구현
 
 default: production
 
-develop -> config/settings/debug.py 수행
+development -> config/settings/debug.py 수행
 
 production -> config/settings/deploy.py 수행
 
