@@ -15,7 +15,9 @@ Django와 JWT 토큰을 사용하여 간단한 인증 서버를 구현
 ## Getting Started
 
 ### 환경 분리용 json 파일
-프로젝트 폴더와 같은 위치에 설정 폴더(.config_secret/)와 내부에 json 파일들이 필요하다.
+프로젝트 폴더 내부에 설정 폴더(.config_secret/)와 json 파일들이 필요하다.
+
+![config-dir](https://github.com/publicejh/auth_server/blob/master/docs/img/config-dir.png)
 
 #### settings_common.json
 ```
